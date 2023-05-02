@@ -1,0 +1,557 @@
+/* =================================================== header ======================================================= */
+/* =================================================== header ======================================================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+
+header.active {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+header .head-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 8;
+  transition: all 0.3s ease;
+}
+
+header.menuon::before {
+  height: 100%;
+}
+
+/* =================================================== head-logo ======================================================= */
+/* =================================================== head-logo ======================================================= */
+
+header .head-wrap .head-logo {
+  z-index: 10;
+}
+
+header .head-wrap .head-logo img {
+  max-width: 350px;
+  width: 100%;
+}
+
+/* 디바이스 크기 640px 이하 */
+@media screen and (max-width: 640px) {
+  header .head-wrap .head-logo img {
+    max-width: 250px;
+  }
+}
+
+/* =================================================== head-logo ======================================================= */
+/* =================================================== head-logo ======================================================= */
+
+/* =================================================== menu (1depth) ======================================================= */
+/* =================================================== menu (1depth) ======================================================= */
+
+header .head-wrap .menu {
+  color: #fff;
+}
+
+header.active .head-wrap .menu {
+  color: #333;
+}
+
+header .head-wrap .menu > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .head-wrap .menu > ul > li {
+  position: relative;
+  padding: 0 20px;
+}
+header .head-wrap .menu > ul > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 0px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+header.active .head-wrap .menu > ul > li > a {
+  color: #333;
+}
+
+header .head-wrap .menu > ul > li > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* header .head-wrap .sub-menu > li > a hover 시 header .head-wrap .menu > ul > li > a::after*/
+
+header.active .head-wrap .menu > ul > li > a::after {
+  background-color: #333;
+}
+
+header .head-wrap .menu > ul > li.active > a::after {
+  width: 100%;
+}
+
+/* 디바이스 크기 1200px 이하 */
+@media screen and (max-width: 1200px) {
+  header .head-wrap .menu {
+    display: none;
+  }
+}
+
+/* =================================================== menu (1depth) ======================================================= */
+/* =================================================== menu (1depth) ======================================================= */
+
+/* =================================================== menu (2depth) ======================================================= */
+/* =================================================== menu (2depth) ======================================================= */
+
+header .head-wrap .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+}
+
+header .head-wrap .sub-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+header .head-wrap .sub-menu > li {
+  position: relative;
+  padding: 0 20px;
+}
+
+header .head-wrap .sub-menu > li > a {
+  position: relative;
+  display: block;
+  padding: 15px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+header .head-wrap .sub-menu > li > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+header .head-wrap .sub-menu > li > a:hover::after {
+  width: 100%;
+}
+
+/* =================================================== menu (2depth) ======================================================= */
+/* =================================================== menu (2depth) ======================================================= */
+
+/* =================================================== menu (mobile) ======================================================= */
+/* =================================================== menu (mobile) ======================================================= */
+
+header .head-wrap .mobile-menu {
+  display: none;
+}
+
+/* mobile-menu */
+.mobile-menu .menu-icon {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.mobile-menu .menu-icon i {
+  color: #fff;
+}
+
+header.active .head-wrap .mobile-menu .menu-icon i {
+  color: #333;
+}
+
+.mobile-menu .menu-icon .menu-icon-bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+header.active .head-wrap .mobile-menu .menu-icon .menu-icon-bar,
+.mobile-menu.active .menu-icon .menu-icon-bar {
+  background-color: #333;
+}
+
+header.menuon .head-wrap .mobile-menu .menu-icon .menu-icon-bar,
+.mobile-menu.active .menu-icon .menu-icon-bar {
+  background-color: #fff;
+}
+
+/* .menu-icon-bar active */
+.mobile-menu.active .menu-icon .menu-icon-bar:nth-child(1) {
+  transform: rotate(45deg) translateY(11.5px);
+}
+
+.mobile-menu.active .menu-icon .menu-icon-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu.active .menu-icon .menu-icon-bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-11.5px);
+}
+
+/* mobile-menu-wrap */
+.mobile-menu .mobile-menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 80px 30px 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  overflow: scroll;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.active .mobile-menu-wrap {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%);
+}
+
+.mobile-menu.active .mobile-menu-wrap::-webkit-scrollbar {
+  width: 12px;
+}
+.mobile-menu.active .mobile-menu-wrap::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: rgba(220, 220, 220, 0.3);
+}
+.mobile-menu.active .mobile-menu-wrap::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border-radius: 5px;
+  background-color: #516371;
+  border: 2px solid transparent;
+}
+
+.mobile-menu .mobile-menu-logo img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.mobile-menu .mobile-search {
+  position: relative;
+  margin-top: 50px;
+}
+
+/* .mobile-search .search-form */
+.mobile-search .search-form {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(-20px);
+  border-radius: 10px;
+}
+
+.mobile-search .search-form fieldset {
+  border: 0;
+}
+
+.mobile-search .search-form input {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-search .search-form button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.mobile-search .search-form button i {
+  color: #333;
+}
+
+.mobile-menu .mobile-menu-list {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.mobile-menu .mobile-menu-list > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mobile-menu .mobile-menu-list > ul > li {
+  width: calc(50% - 20px);
+  margin: 0 10px;
+}
+
+.mobile-menu .mobile-menu-list > ul > li:nth-child(n + 3):nth-child(-n + 5) {
+  margin-top: 20px;
+}
+
+.mobile-menu .mobile-menu-list > ul > li > a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-family: "nanumSQB";
+  transform: skew(-0.1deg);
+}
+
+/* .mobile-menu .mobile-menu-wrap .mobile-menu-list > ul > li > a 밑에 검정색 줄 */
+.mobile-menu .mobile-menu-list > ul > li > a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu .mobile-sub-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu .mobile-sub-menu > li {
+  position: relative;
+  padding: 5px 0;
+}
+
+.mobile-menu .mobile-sub-menu > li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.mobile-menu .mobile-sub-menu > li > a {
+  display: inline-block;
+  padding-left: 20px;
+  font-size: 18px;
+  font-family: "nanumSQ";
+  transform: skew(-0.1deg);
+}
+
+/* 디바이스 크기 1200px 이하 */
+@media screen and (max-width: 1200px) {
+  header .head-wrap .mobile-menu {
+    display: block;
+  }
+}
+
+/* 디바이스 크기 640px 이하 */
+@media screen and (max-width: 640px) {
+  .mobile-menu .mobile-menu-logo img {
+    max-width: 250px;
+  }
+
+  .mobile-menu .mobile-menu-list {
+    margin-top: 0;
+  }
+
+  .mobile-menu .mobile-menu-list > ul > li {
+    width: 100%;
+  }
+
+  .mobile-menu .mobile-menu-list > ul > li:nth-child(n + 2):nth-child(-n + 5) {
+    margin-top: 20px;
+  }
+
+  .mobile-menu .mobile-menu-list > ul > li > a {
+    pointer-events: none;
+  }
+
+  /* .mobile-menu .mobile-menu-list > ul > li > a 오른쪽에 + 모양 버튼 */
+  .mobile-menu .mobile-menu-list > ul > li > a::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background-size: cover;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu .mobile-menu-list > ul > li.active > a::before {
+    content: "-";
+  }
+
+  .mobile-menu .mobile-sub-menu {
+    display: none;
+  }
+
+  .mobile-menu-list > ul > li.active .mobile-sub-menu {
+    display: flex;
+  }
+
+  .mobile-menu .mobile-sub-menu > li {
+    padding: 4px 0;
+  }
+
+  .mobile-menu .mobile-sub-menu > li::before {
+    width: 3px;
+    height: 3px;
+  }
+
+  .mobile-menu .mobile-sub-menu > li > a {
+    font-size: 16px;
+  }
+}
+
+/* 디바이스 크기 480px 이하 */
+@media screen and (max-width: 480px) {
+  .mobile-search .search-form {
+    padding: 10px 20px;
+  }
+}
+
+/* =================================================== menu (mobile) ======================================================= */
+/* =================================================== menu (mobile) ======================================================= */
+
+/* =================================================== search ======================================================= */
+/* =================================================== search ======================================================= */
+
+header .head-wrap .search {
+  position: relative;
+}
+
+.search .search-icon {
+  cursor: pointer;
+}
+
+.search i {
+  color: #fff;
+}
+
+header.active .head-wrap .search i {
+  color: #333;
+}
+
+/* .search .search-form */
+.search .search-form {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  border-radius: 10px;
+}
+
+.search .search-form.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px);
+}
+
+.search .search-form fieldset {
+  border: 0;
+}
+
+.search .search-form input {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #333;
+}
+
+.search .search-form button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.search .search-form button i {
+  color: #333;
+}
+
+/* 디바이스 크기 1200px 이하 */
+@media screen and (max-width: 1200px) {
+  header .head-wrap .search {
+    display: none;
+  }
+}
+
+/* =================================================== search ======================================================= */
+/* =================================================== search ======================================================= */
+
+/* =================================================== header ======================================================= */
+/* =================================================== header ======================================================= */

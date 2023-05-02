@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<!-- s:head -->
+	<meta charset="utf-8" /> 
+	 <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, width=device-width">
+	<!-- 브라우저 최신버전 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+	<!-- 웹 페이지가 검색 결과에서 제외되지 않도록 로봇 메타 태그 기본 설정-->
+	<meta name="robots" content="index,follow"> 
+	<!-- 페이지 설명 -->
+	<meta name="description" content="연세메인치과 이벤트">
+	<meta name="keywords" content="연세메인치과 이벤트">
+	<!-- 오픈그래프 태그, 소셜 미디어로 공유될 때 우선적으로 활용 -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="연세메인치과 이벤트">
+	<meta property="og:description" content="연세메인치과 이벤트">
+	<meta property="og:image" content="img/cover.jpg">
+	<meta name="twitter:image" content="img/cover.jpg">
+	<title>연세메인치과 이벤트</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" media="all" />
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,500,700,900&display=swap" rel="stylesheet">
+	<!-- <link rel="shortcut icon" href="img/favicon.ico" /> -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/move.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+	<link rel="shortcut icon" href="favicon.ico">
+<!-- e:head -->
+<script type="text/javascript">
+	$(function(){ // jQuery 준비
+		}); //end : scroll
+		$('#popup1 .popclose').click(function(){
+			$('#popup1').hide();
+		});	
+
+</script>
+
+ </head>
+ <body>
+	<div id="content">
+		<!-- 슬라이드 -->
+		<div id="content_wrap">
+			<div class="con"><span class=""><img src="img/insta2.jpg" alt="홈페이지바로가기"></span></div>
+		</div><!-- content_wrap -->
+	</div><!-- content -->
+	<div id="event2_footer" >
+		<div id="footer_wrap" class="center">
+			<div id="f1">이벤트신청</div>
+				<div id="formmail">
+				<form name="contactform" method="post" action="send.php">
+					<table>
+						<tr>
+							<th scope="row">
+								<label for="subject">신청종류</label>
+							</th>
+							<td>
+								<select name="subject">
+                                    <option value="" disabled selected>선택해주세요</option>
+									<option value="임플란트">임플란트</option>
+									<option value="치아교정">치아교정</option>
+									<option value="심미치료">심미치료</option>
+									<option value="일반진료">일반진료</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label for="first_name">이름</label>
+							</th>
+							<td>
+								<input name="first_name"  type="text" class="ipt first_name" size="15" maxlength="50" required placeholder="이름" >
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label for="telephone">연락처</label>
+							</th>
+							<td>
+								<input name="telephone"  type="text" class="ipt telephone" size="15" maxlength="30" required placeholder="연락처" >
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label for="kind">상담내용</label>
+							</th>
+							<td>
+								<input name="kind" type="text" class="ipt kind"size="30" maxlength="50" required placeholder="상담내용을 입력해주세요.">
+							</td>
+						</tr>
+						<tr class="agree">
+							<td>
+								<label for="sns_ok" >개인정보수집동의<a href="#">[처리방침]</a></label>
+							</td>
+                            <td>
+                                <input type="checkbox" name="sns_ok" checked>
+                            </td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td height="40" colspan="2" style="text-align:center">
+							  <input type="submit" value="상담 신청하기"  class="btn_submit">
+							<!-- <input name="재설정" type="reset" value="다시작성" class="btn_submit"></td> -->
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div id="m_click"><span>이벤트 신청하기</span></div>
+		</div><!-- footer_wrap -->
+		<script>
+			$(function(){ // jQuery 준비	
+				var navi_show = false; 
+				$('#m_click').click(function(){
+					navi_show = !navi_show //navi_show 앞에 값을 변경해주기
+					if(navi_show){ // 만약 네비쇼를 한번 클릭했을때
+						$('#event2_footer').css({'top':'0',});
+					}else{ //한번 더 누르는 경우 
+						$('#event2_footer').css({'top':'-357px',});
+					}
+				});					
+			});
+		</script>
+	</div><!-- footer -->
+	<footer>
+		<div class="footer_box">
+			 <!-- footer 로고 해당 파일명으로 저장 -->
+			<!-- <p><img src="img/foot_logo.png" alt="" /></p>
+			<br> -->
+			<p>
+			경기도 안양시 동안구 관평로 170번길 33, 209호  |   사업자등록번호: 875-71-00383<br>
+			상호명: 연세메인치과의원   |   대표자명: 서권수<br>
+			Copyright(c) 2022 연세메인치과의원 All rights reserved.
+            </p>
+		</div>
+	</footer><!-- footer -->
+<!-- 	<div class="go_top bounce">
+		▲
+	</div> -->
+ </body>
+
+ <style>
+ #content{max-width: 1000px; margin: 0 auto; width: 100%; padding-top: 107px;}
+ @media screen and (max-width:769px) {
+ #content{padding-top: 55px;}	
+ }
+ </style>
+</html>

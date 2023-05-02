@@ -1,0 +1,1028 @@
+/* =================================================== fullpage ======================================================= */
+/* =================================================== fullpage ======================================================= */
+
+#fullpage .section {
+  color: #333;
+}
+
+#fullpage .section:not(:last-child) {
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#fullpage .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fp-is-overflow .fp-overflow.fp-auto-height-responsive,
+.fp-is-overflow .fp-overflow.fp-auto-height,
+.fp-is-overflow > .fp-overflow {
+  overflow: visible !important;
+  width: 100%;
+  height: 100%;
+}
+
+.fp-watermark {
+  display: none !important;
+}
+
+.fp-tooltip {
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* custom-nav */
+
+.custom-nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.custom-nav.active {
+  opacity: 1;
+  z-index: 9;
+}
+
+.custom-nav.close {
+  display: none;
+}
+
+.custom-nav li {
+  margin: 10px 0;
+}
+.custom-nav a {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.custom-nav a.active {
+  background: #f00;
+}
+
+/* custom-nav */
+
+/* 디바이스 크기 900px 이하일 때 */
+
+@media screen and (max-width: 900px) {
+  #fullpage .section:not(:last-child) {
+    height: 100% !important;
+  }
+  .fp-overflow {
+    max-height: none !important;
+  }
+
+  .fp-scrollable.fp-responsive
+    .fp-is-overflow.fp-section:not(.fp-auto-height):not([data-percentage]),
+  .fp-scrollable .fp-section:not(.fp-auto-height):not([data-percentage]),
+  .fp-scrollable .fp-slide:not(.fp-auto-height):not([data-percentage]) {
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+}
+
+/* 디바이스 크기 769px 이하일 때 */
+@media screen and (max-width: 769px) {
+  .custom-nav {
+    right: 10px;
+  }
+  .custom-nav a {
+    font-size: 12px;
+  }
+}
+
+/* 디바이스 크기 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .custom-nav {
+    top: auto;
+    transform: none;
+    bottom: 10px;
+  }
+  .custom-nav a {
+    padding: 3px;
+    font-size: 11px;
+  }
+}
+
+/* =================================================== fullpage ======================================================= */
+/* =================================================== fullpage ======================================================= */
+
+/* =================================================== swiper ======================================================= */
+/* =================================================== swiper ======================================================= */
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: #a38383;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 100% !important;
+}
+
+.swiper-button-prev {
+  left: 50px !important;
+}
+.swiper-button-next {
+  right: 50px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.4;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  opacity: 1;
+}
+
+.swiper-button-prev::after {
+  content: "\f104";
+}
+
+.swiper-button-next::after {
+  content: "\f105";
+}
+
+.slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-img > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../img/main/slide_01.jpg);
+  filter: brightness(0.6);
+}
+
+/* data-swiper-slide-index가 1일때 */
+.swiper-slide[data-swiper-slide-index="1"] .slide-img > div {
+  background-image: url(../img/main/slide_02.jpg);
+}
+
+/* data-swiper-slide-index가 2일때 */
+.swiper-slide[data-swiper-slide-index="2"] .slide-img > div {
+  background-image: url(../img/main/slide_03.jpg);
+}
+
+.slide-text {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #fff;
+  opacity: 0;
+  transition: 0.8s ease-in-out;
+  width: 100%;
+}
+
+.swiper-slide-active .slide-text {
+  opacity: 1;
+  top: 50%;
+}
+
+.slide-text h1 {
+  margin-bottom: 2rem;
+  font-family: "nanumSQL";
+  transform: skew(-0.1deg);
+  letter-spacing: 0.2rem;
+  white-space: pre-line;
+  font-weight: 300;
+}
+
+.slide-text p {
+  font-family: "nanumSQL";
+  transform: skew(-0.1deg);
+  letter-spacing: 0.3rem;
+  white-space: pre-line;
+}
+
+/* 디바이스 크기 1200px 이하일 때 */
+@media screen and (max-width: 1200px) {
+  .swiper-button-prev {
+    left: 20px !important;
+  }
+  .swiper-button-next {
+    right: 20px !important;
+  }
+}
+
+/* 디바이스 크기 900px 이하일 때 */
+@media screen and (max-width: 900px) {
+  .slide-img > div {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100) !important;
+  }
+}
+
+/* 디바이스 크기 640px 이하일 때 */
+@media screen and (max-width: 640px) {
+  .slide-text h1 {
+    font-size: 25px;
+  }
+  .slide-text p span {
+    font-size: 1em;
+  }
+}
+
+/* 디바이스 크기 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .slide-img > div {
+    height: 70vh;
+    height: calc(var(--vh, 1vh) * 70) !important;
+  }
+
+  .slide-text h1 {
+    font-size: 20px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: auto !important;
+    bottom: 35px;
+  }
+}
+
+/* =================================================== swiper ======================================================= */
+/* =================================================== swiper ======================================================= */
+
+/* =================================================== 마우스 휠 아이콘 ======================================================= */
+/* =================================================== 마우스 휠 아이콘 ======================================================= */
+
+.mouse_scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  display: block;
+  margin: 0 auto;
+  width: 22px;
+  transform: translateX(-50%);
+  z-index: 11;
+}
+.m_scroll_arrows {
+  display: block;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-right: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  margin: 0 0 0px 5px;
+  width: 12px;
+  height: 12px;
+}
+.m_scroll_arrows_one,
+.m_scroll_arrows_two {
+  animation: mouse-scroll 1s infinite;
+}
+.m_scroll_arrows_one {
+  animation-delay: 0.1s;
+  animation-direction: alternate;
+  margin-top: -1px;
+}
+.m_scroll_arrows_two {
+  animation-delay: 0.3s;
+  animation-direction: alternate;
+  margin-top: -5px;
+}
+
+.mouse {
+  height: 38px;
+  width: 100%;
+  border-radius: 50px;
+  transform: none;
+  border: 1px solid #fff;
+}
+.wheel {
+  height: 12px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: #fff;
+  position: relative;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+.wheel {
+  animation: mouse-wheel 2.5s ease-in-out infinite;
+}
+@keyframes mouse-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes mouse-wheel {
+  0% {
+    top: 1px;
+  }
+  25% {
+    top: 2px;
+  }
+  50% {
+    top: 3px;
+  }
+  75% {
+    top: 2px;
+  }
+  100% {
+    top: 1px;
+  }
+}
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* =================================================== 마우스 휠 아이콘 ======================================================= */
+/* =================================================== 마우스 휠 아이콘 ======================================================= */
+
+/* =================================================== Area 2 ======================================================= */
+/* =================================================== Area 2 ======================================================= */
+
+/* treatment 안에 li들을 4개 구역으로 나누고 이미지는 배경이미지로 적용 */
+
+.treatment {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.treatment > li {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.treatment > li .treatment-content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.treatment > li .treatment-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.treatment > li .treatment-img > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.treatment > li.active .treatment-img > div {
+  filter: brightness(0.8);
+}
+
+.treatment > li:nth-child(1) .treatment-img > div {
+  background-image: url(https://www.tudentalse.com/images/main/main_flex_bnr01.jpg);
+}
+
+.treatment > li:nth-child(2) .treatment-img > div {
+  background-image: url(https://www.tudentalse.com/images/main/main_flex_bnr02.jpg);
+}
+
+.treatment > li:nth-child(3) .treatment-img > div {
+  background-image: url(https://www.tudentalse.com/images/main/main_flex_bnr03.jpg);
+}
+
+.treatment > li:nth-child(4) .treatment-img > div {
+  background-image: url(https://www.tudentalse.com/images/main/main_flex_bnr04.jpg);
+}
+
+.treatment > li .treatment-text {
+  position: relative;
+  bottom: 30px;
+  width: 100%;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.treatment > li .treatment-text h3 {
+  font-family: "nanumSQL";
+  transform: skew(-0.1deg);
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+}
+
+/* .treatment > li .treatment-text a 바로가기 화살표 애니메이션 */
+.treatment > li .treatment-text a {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.treatment > li .treatment-text a::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  left: -6.25px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg) translate(-50%, -50%);
+  transition: all 0.5s ease-in-out;
+}
+
+.treatment > li .treatment-text a::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  left: 6.25px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg) translate(-50%, -50%);
+  transition: all 0.5s ease-in-out;
+}
+
+.treatment > li.active .treatment-text a::after,
+.treatment > li.active .treatment-text a::before {
+  left: 0px;
+}
+
+/* 디바이스 크기 900px 이하일 때 */
+@media screen and (max-width: 900px) {
+  .treatment > li {
+    width: 50%;
+  }
+  .treatment > li .treatment-content {
+    height: 500px;
+  }
+}
+
+/* 디바이스 크기 640px 이하일 때 */
+@media screen and (max-width: 640px) {
+  .treatment > li .treatment-text {
+    bottom: 20px;
+  }
+  .treatment > li .treatment-text h3 {
+    font-size: 28px;
+  }
+}
+
+/* 디바이스 크기 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .treatment > li {
+    width: 25%;
+  }
+
+  .treatment > li .treatment-content {
+    height: 300px;
+  }
+  .treatment > li .treatment-text {
+    bottom: 10px;
+    padding: 0 5px;
+  }
+  .treatment > li .treatment-text h3 {
+    font-size: 14px;
+  }
+
+  .treatment > li.mobile-active .treatment-img > div {
+    filter: brightness(0.9);
+  }
+
+  .treatment > li.mobile-active .treatment-text a::after,
+  .treatment > li.mobile-active .treatment-text a::before {
+    left: 0px;
+  }
+}
+
+/* =================================================== Area 2 ======================================================= */
+/* =================================================== Area 2 ======================================================= */
+
+/* =================================================== Area 3 ======================================================= */
+/* =================================================== Area 3 ======================================================= */
+
+.doctor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #fcfcfc;
+}
+
+.doctor-cover {
+  flex: 1;
+}
+
+.doctor-cover > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/main/doctor_cover.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.doctor-txt {
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.doctor-txt > ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.doctor-txt > ul > li {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.doctor-txt .logo-circle {
+  display: inline-block;
+  left: 85px;
+}
+
+.doctor-txt h5 {
+  margin-bottom: 10px;
+  font-family: "nanumSQB";
+  transform: skew(-0.1deg);
+  color: var(--green-color);
+}
+
+.doctor-txt p {
+  font-family: "nanumSQ";
+  transform: skew(-0.1deg);
+}
+
+.doctor-txt a {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: 1px solid #333;
+  font-size: 15px;
+  font-family: "nanumSQ";
+  transform: skew(-0.1deg);
+  transition: 0.4s ease-in-out;
+}
+
+/* .doctor-txt a hover시 왼쪽에서 오른쪽으로 배경색 */
+.doctor-txt a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--green-color);
+  transition: 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.doctor-txt a:hover::before {
+  width: 100%;
+}
+
+.doctor-txt a:hover {
+  color: #fff;
+}
+
+/* 디바이스 크기 900px 이하일 때 */
+@media screen and (max-width: 900px) {
+  .doctor-cover > div {
+    height: 500px;
+  }
+}
+
+/* 디바이스 크기 600px 이하일 때 */
+@media screen and (max-width: 600px) {
+  .doctor-cover > div {
+    height: 400px;
+  }
+
+  .doctor-txt > ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-txt > ul > li {
+    padding: 0;
+  }
+
+  .doctor-txt > ul > li:last-child {
+    margin-top: 20px;
+  }
+
+  .doctor-txt .logo-circle {
+    left: auto;
+  }
+}
+
+/* 디바이스 크기 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .doctor-cover > div {
+    height: 300px;
+  }
+
+  .doctor-txt a {
+    margin-top: 15px;
+    padding: 6px 18px;
+    font-size: 13px;
+  }
+}
+
+/* =================================================== Area 3 ======================================================= */
+/* =================================================== Area 3 ======================================================= */
+
+/* =================================================== Area 4 ======================================================= */
+/* =================================================== Area 4 ======================================================= */
+
+.time {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.time > li {
+  width: 50%;
+}
+
+.time-cover > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/main/time_cover.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.time-cover > div::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 1px solid #fff;
+}
+
+.time-txt {
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+}
+
+.time-txt > div {
+  width: 100%;
+}
+
+.time-txt h5 {
+  font-family: "nanumSQB";
+  transform: skew(-0.1deg);
+  color: var(--green-color);
+}
+
+.time-txt p {
+  font-family: "nanumSQ";
+  transform: skew(-0.1deg);
+}
+
+.time-txt .time-title h5 {
+  margin-bottom: 10px;
+}
+
+.time-txt .time-list {
+  margin-top: 50px;
+}
+
+.time-txt .time-list ul {
+  margin: 20px 0 0 20px;
+}
+
+.time-txt .time-list ul > li {
+  display: flex;
+}
+
+.time-txt .time-list ul > li > p:first-child {
+  width: 100px;
+  text-align: justify;
+  margin-right: 50px;
+}
+
+.time-txt .time-list ul > li > p:first-child::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+}
+
+.time-txt .notice {
+  margin-top: 20px;
+}
+
+/* 디바이스 크기 1200px 이하일 때 */
+@media screen and (max-width: 1200px) {
+  .time-txt {
+    padding-left: 50px;
+  }
+}
+
+/* 디바이스 크기 900px 이하일 때 */
+@media screen and (max-width: 900px) {
+  .time {
+    flex-direction: column;
+  }
+
+  .time > li {
+    width: 100%;
+  }
+
+  .time-cover > div {
+    height: 600px;
+  }
+
+  .time-txt {
+    padding: 40px;
+  }
+}
+
+/* 디바이스 크기 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .time-cover > div {
+    height: 400px;
+  }
+
+  .time-txt {
+    padding: 40px 20px;
+  }
+  .time-txt .time-list {
+    margin-top: 30px;
+  }
+
+  .time-txt .time-list ul {
+    margin: 20px 0 0 10px;
+  }
+
+  .time-txt .time-list ul > li > p:first-child {
+    width: 80px;
+    margin-right: 40px;
+  }
+}
+
+/* =================================================== Area 4 ======================================================= */
+/* =================================================== Area 4 ======================================================= */
+
+/* =================================================== Area 5 ======================================================= */
+/* =================================================== Area 5 ======================================================= */
+
+.map {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.map > li {
+  width: 50%;
+}
+
+.map .root_daum_roughmap {
+  width: 100%;
+  height: 100%;
+}
+
+.map .root_daum_roughmap .wrap_map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-txt {
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+}
+
+.map-txt > div {
+  width: 100%;
+}
+
+.map-txt h5 {
+  font-family: "nanumSQB";
+  transform: skew(-0.1deg);
+  color: var(--green-color);
+}
+
+.map-txt p {
+  font-family: "nanumSQ";
+  transform: skew(-0.1deg);
+}
+
+.map-txt .map-title {
+  margin-bottom: 50px;
+}
+
+.map-txt .map-title h5 {
+  margin-bottom: 10px;
+}
+
+.map-txt .map-address {
+  margin-top: 30px;
+}
+
+.map-txt .map-address h5 {
+  margin-bottom: 10px;
+}
+
+/* 디바이스 크기 1200px 이하일 때 */
+@media screen and (max-width: 1200px) {
+  .map-txt {
+    padding-left: 50px;
+  }
+}
+
+/* 디바이스 크기 900px 이하일 때 */
+@media screen and (max-width: 900px) {
+  .map {
+    flex-direction: column-reverse;
+  }
+
+  .map > li {
+    width: 100%;
+  }
+
+  .map .root_daum_roughmap .wrap_map {
+    height: 400px;
+  }
+
+  .map-txt {
+    padding: 40px;
+  }
+}
+
+/* 디바이스 크기 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .map .root_daum_roughmap .wrap_map {
+    height: 300px;
+  }
+
+  .map-txt {
+    padding: 40px 20px;
+  }
+  .map-txt .map-title {
+    margin-bottom: 30px;
+  }
+
+  .map-txt .map-address {
+    margin-top: 20px;
+  }
+}
+
+/* =================================================== Area 5 ======================================================= */
+/* =================================================== Area 5 ======================================================= */
+
+/* =================================================== Area 6 ======================================================= */
+/* =================================================== Area 6 ======================================================= */
+
+.footer-sec {
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  background-color: #fff;
+}
+
+.footer-sec > div {
+  height: auto;
+}
+
+/* =================================================== Area 6 ======================================================= */
+/* =================================================== Area 6 ======================================================= */

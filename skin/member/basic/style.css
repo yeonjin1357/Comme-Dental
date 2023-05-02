@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+/* =================================================== common ======================================================= */
+/* =================================================== common ======================================================= */
+
+.selec_chk {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.selec_chk:checked {
+  border: 1px solid var(--btn-check);
+}
+
+.selec_chk:checked::before {
+  content: "\2713";
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--btn-check);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+.selec_chk:focus {
+  outline: none;
+}
+
+/* =================================================== common ======================================================= */
+/* =================================================== common ======================================================= */
+
+/* =================================================== login ======================================================= */
+/* =================================================== login ======================================================= */
+
+.login-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.login-wrap input[type="text"],
+.login-wrap input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #5e5e5e;
+  box-sizing: border-box;
+}
+
+.login-wrap input[type="text"]::placeholder,
+.login-wrap input[type="password"]::placeholder {
+  color: #a7a7a7;
+}
+
+.btn_submit {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#login_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#login_info .login_if_auto {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#login_info .login_if_reg {
+  width: 100%;
+  text-align: right;
+}
+
+/* 디바이스 크기가 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .login-wrap {
+    padding: 20px 10px 40px;
+  }
+}
+
+/* =================================================== login ======================================================= */
+/* =================================================== login ======================================================= */
+
+/* =================================================== register ======================================================= */
+/* =================================================== register ======================================================= */
+
+.register {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.register .btn_confirm .btn_submit:hover,
+.register .btn_confirm .btn_close:hover {
+  background: var(--btn-color);
+}
+
+.register .btn_confirm {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 20px;
+}
+.register .btn_confirm .btn_close {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #d8d8d8;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #5e5e5e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.register .btn_confirm .btn_submit {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+#fregister .register-notice {
+  padding: 10px;
+  margin: 40px 0 20px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1em;
+  background: var(--btn-color);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#fregister .register-notice i {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+#fregister section {
+  margin: 10px auto 15px;
+  border: 1px solid #dde7e9;
+  position: relative;
+  border-radius: 3px;
+}
+#fregister_chkall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #f5f7fa;
+  padding: 15px 0;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+#fregister h6 {
+  margin: 0;
+  font-family: "nanumSQB";
+  transform: skew(-0.1deg);
+}
+#fregister textarea {
+  resize: none;
+  display: block;
+  padding: 20px;
+  width: 100%;
+  height: 210px;
+  background: #fff;
+  border: 0;
+  line-height: 1.6em;
+  font-family: "nanumSQ";
+  transform: skew(-0.1deg);
+}
+#fregister_private {
+  position: relative;
+}
+.fregister-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 20px 20px;
+}
+
+#fregister_term .fregister_agree,
+#fregister_private .fregister_agree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#fregister_term .fregister_agree .selec_chk,
+#fregister_private .fregister_agree .selec_chk {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+/* =================================================== register ======================================================= */
+/* =================================================== register ======================================================= */

@@ -1,0 +1,387 @@
+@charset "utf-8";
+span.and{
+	width:10%;
+	text-align:center;
+	display:inline-block;
+	color:#008bc8;
+	font:18px "Noto Sans KR";
+}
+.wrap ul{
+	overflow:hidden;
+}
+.wrap ul li{
+	float:left;
+	width:49%;
+}
+.wrap ul li:nth-child(1){
+	margin-right:2%;
+}
+/* 컨텐츠 공통스타일 */
+.con a{
+	display:block;
+}
+.con img{width: 100%;height: auto;}
+
+#event2_content {padding-top: 105px;}
+#event2_copy {padding-bottom: 0;}
+
+	/*	푸터 */
+	footer {width:100%; background:#222;padding: 10px 0 10px 0;-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;}
+	footer .footer_box {margin:0 auto; padding:30px 0;}
+	footer .footer_box p {font-size:15px; color:#eee; text-align:center; margin-top:20px; line-height:30px;}
+	.sound_only{position: absolute; left:-10000px; top:auto; height:1px; overflow:hidden;}
+
+
+	/*반응형 작업*/
+
+	#logo_m {
+		display:none;
+		}
+	.m_img {
+		display:none;
+	}
+	/*모바일메뉴*/
+	#m_menu{
+		display:none;  
+	}
+	/*갤러리 스와이퍼*/
+	.gallery-top {
+        width: 100%;
+		height:700px;
+    }
+	.swiper-container{
+       width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide{
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+		background-size: cover;
+        background-position: center;
+    }
+	.swiper-slide img{
+		width:100%;
+		height:auto;
+		vertical-align:top;
+	}
+	.swiper-button-next_01 {
+		right:5%;
+	}
+	.swiper-button-prev_01 {
+		left: 5%;
+	}
+
+    .gallery-thumbs {
+        height:150px;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+        height: 100%;
+		opacity:.2;
+		cursor:pointer;
+    }
+    .gallery-thumbs .swiper-slide-active{
+		opacity:1;
+		cursor:default;
+    }
+	.root_daum_roughmap .wrap_controllers{
+		display:none;
+	}
+	/*지도*/
+	.map{
+		height:630px;
+	}
+
+	/*폼메일*/
+	.btn_send{
+	border:none;
+	background: #d9ba68;
+	font: 17px "Noto Sans KR";
+	padding: 10px 0;
+	width: 305px;
+	cursor: pointer;
+	margin-left: 180px;
+	margin-top: -7px;
+	}
+
+	#formmail tbody{
+		float: left;
+	}
+	#formmail{
+		overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+		margin-top: 5px;
+	}
+	#formmail td select{
+		width:132px;
+		height: 35px;
+	}
+	#formmail tr{
+		float: left;
+
+	}
+	#formmail table{
+		float: left;
+
+	}
+	.memo textarea{
+		margin-top: 5px;
+		font: 15px "Noto Sans KR";
+	}
+	#footer{
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background: #333;
+		padding-bottom: 0;
+		padding: 11px 0;
+		color: #fff;
+		z-index: 10;
+	}
+	#event2_footer{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background: #3b425c;
+		padding: 10px 0 0 0;
+		color: #fff;
+		z-index: 10;
+	}
+	#footer_wrap{
+		overflow: hidden;
+		width: 100%;
+		    max-width: 1300px;
+	margin: auto;
+	}
+	#formmail label,#formmail body,#formmail th,#formmail td,#formmail input,#formmail select,#formmail textarea,#formmail button{
+		font: 15px "Noto Sans KR";
+		line-height: 40px;
+	}
+	input, select{
+		text-indent: 5px;
+		vertical-align: middle;
+        border-radius: 10px;
+	}
+	.btn_submit{
+		height: 100%;
+        background: linear-gradient(to bottom, #f9fbfd, #88abbd);
+		border: none;
+		width: 160px;
+		border-radius: 30px;
+		text-align: center;
+		font: 20px "Noto Sans KR";
+		color: #fff;
+		cursor: pointer;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.btn_submit:hover{
+        opacity: 0.8;
+        transition: 0.2s;
+	}
+
+    .agree a{
+        color: rgb(240, 192, 36);
+    }
+    .agree label{
+        font-size: 12px !important;
+    }
+	#f1,#f2{
+		width: 100%;
+        text-align: center;
+		margin-top: 5px;
+		color: #fff;
+		font: 26px "Noto Sans KR";
+		font-weight: 500;
+		margin-right: 15px;
+	}
+	#f1 a{
+		color: #fff;
+		letter-spacing:5px;
+		line-height: 47px;
+	}
+	.first_name {width:100px; height:30px}
+	.telephone {width:150px; height:30px}
+	.kind {width:300px; height:30px; line-height: 30px;}
+	#m_click{display: none;}
+@media screen and (max-width:767px){
+
+	#event2_content {padding-top: 53px;}
+	#event2_footer{
+		top:-357px
+	}
+	.pc_img {
+	display:none;
+	}
+	.m_img {
+	display:block;
+	}
+	#m_click{display: block;cursor: pointer; margin-top: 50px;}
+	#m_click span{display: block;width: 200px;margin: -30px auto 0;padding: 15px 0;-webkit-border-radius: 15px 15px 0 0;-moz-border-radius: 15px 15px 0 0;	border-radius:15px 15px 0 0 ;font-weight: 500;text-align: center;font-size: 17px;background: #4aacff;}
+	footer{
+		width:100%; height: auto; background:#222;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; 
+	}
+	footer .footer_box p {
+		font-size:11px; color:#777;text-align:center; margin:0 auto;
+	}
+	footer p a{
+		color: #fff;
+	}
+	footer img{
+		max-width:200px;
+	}
+	/*폼메일*/
+	.btn_send{
+	border:none;
+	background: #d9ba68;
+	font: 17px "Noto Sans KR";
+	padding: 10px 0;
+	width: 305px;
+	cursor: pointer;
+	margin-left: 180px;
+	margin-top: -7px;
+	}
+
+	#formmail tbody{
+		float: none;;
+	}
+	#formmail{
+		overflow: hidden;
+		float: none;;
+		margin-top: 5px;
+	}
+	#formmail td select{
+		width:100%;
+		height: 35px;
+	}
+	#formmail tr{
+		/* float: none;; */
+		margin-right: 0;
+        /* border: 1px solid #000; */
+        width: 100%;
+        display: flex;
+	}
+
+    #formmail tr:first-child td{
+        padding-top: 5px;
+    }
+	#formmail th{
+		/* display: none; */
+        flex: 1;
+        margin-right: 10px;
+	}
+
+    #formmail td{
+        flex: 4;
+    }
+
+    #formmail td input, select{
+        border-radius: 10px;
+    }
+    #formmail td input{
+        height: 35px;
+        margin-top: 5px;
+    }
+
+    #formmail th label{
+        /* border: 1px solid #080; */
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        line-height: 45px !important;
+    }
+	#formmail table{
+		float: none;
+		margin:0 auto;
+		width:95%;
+	}
+    .agree{
+        /* border: 1px solid #000; */
+        display: flex;
+    }
+
+    .agree a{
+        color: rgb(240, 192, 36);
+    }
+    .agree td:first-child{
+        flex: 4 !important;
+    }
+
+    .agree label{
+        height: 40px;
+        line-height: 40px !important;
+        font-size: 12px !important;
+    }
+    .agree td:last-child{
+        flex: 1 !important;
+        text-align: right;
+        padding-right: 5px;
+    }
+
+	.memo textarea{
+		margin-top: 5px;
+		font: 15px "Noto Sans KR";
+	}
+	#footer{
+		position: fixed;
+		bottom: -340px;
+		width: 100%;
+		background: #333;
+		padding-bottom: 0;
+		padding: 10px 0;
+		color: #fff;
+		z-index: 10;
+	}
+	#formmail label,#formmail body,#formmail th,#formmail td,#formmail input,#formmail select,#formmail textarea,#formmail button{
+		font: 15px "Noto Sans KR";
+	}
+	input{
+		text-indent: 5px;
+		vertical-align: middle;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.btn_submit{
+		height: 100%;
+		background: linear-gradient(to bottom, #f9fbfd, #88abbd);
+		border: none;
+		width: 100%;
+		text-align: center;
+		font: 20px "Noto Sans KR";
+		color: #fff;
+		cursor: pointer;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+        border-radius: 30px !important;
+	}
+
+
+	.btn_submit:hover{
+		opacity: 0.8;
+        transition: 0.2s;
+	}
+	#f1,#f2{
+		float: none;
+		margin-top: 5px;
+		color: #fff;
+		font: 30px "Noto Sans KR";
+		text-align:center;
+	}
+	#f1 a{
+		color: #fff;
+		letter-spacing:5px;
+		line-height: 47px;
+	}
+	.first_name {width:100%;}
+	.telephone {width:100%;}
+	.kind {width:100%; line-height: 30px;}
+}

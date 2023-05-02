@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font:0.75em 'Noto Sans KR', sans-serif;
+	color:#333;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#333;
+}
+img{
+	border:0;
+	vertical-align: top;
+}
+
+.center{
+	width:100%;
+	max-width:1200px;
+	margin:0 auto;
+}
+.center_m{
+	width:100%;
+	max-width:1280px;
+	margin:0 auto;
+}
+
+#content img{
+	width:100%;
+	height:auto;
+}
+
+.go_top{
+	position:fixed;
+	bottom:1%;
+	right:1%;
+	border-radius:10px;
+	color:#fff;
+	background: rgba(0,0,0,0.7);
+	text-align:center;
+	cursor:pointer;
+	display:none;
+	padding:18px 20px;
+	z-index:999;
+}
+.go_top:hover{
+	background:#0e2a63;
+	color:#fff;
+	padding:18px 20px;
+}
